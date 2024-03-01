@@ -1,11 +1,11 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
 
-function VehicleCard({ name, number ,expirydate}) {
- 
+function VehicleCard(props) {
+ const {vehicleNumber,vehicleName,insuranceValidUpto}=props;
   return (
-    <View className="bg-[#fff] w-[80%] rounded-xl">
-       <Text className="text-[40px] text-[#666] text-center">{number}</Text>
+    <View className="bg-[#fff] rounded-xl">
+       <Text className="text-[40px] text-[#666] text-center">{vehicleNumber}</Text>
         <View className="h-[100px] w-full rounded-xl aspect-[3/2] m-auto">
         <Image
           resizeMode="cover"
@@ -16,8 +16,8 @@ function VehicleCard({ name, number ,expirydate}) {
         />
     </View>
     <View className="p-2">
-    <Text className="text-[18px] font-bold text-[#333] text-center">{name}</Text>
-    <Text className="text-[18px] font-bold text-[#333] text-center">Insurance valid upto:{expirydate}</Text>
+    <Text className="text-[18px] font-bold text-[#333] text-center">{vehicleName}</Text>
+    <Text className="text-[18px] font-bold text-[#333] text-center">Insurance valid upto:{insuranceValidUpto}</Text>
    </View>
   </View>
   );
